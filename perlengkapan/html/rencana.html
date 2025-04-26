@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project | Rencana Pendakian</title>
+    <link rel="icon" href="../gambar/logo-atap-nusantara-invert.png" type="image/png" sizes="16x16">
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="../../Atap_Nusantara.html">Beranda</a></li>
+        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+        <li><a href="jelajahi.html">Jelajahi</a></li>
+        <li><a href="rencana.html">Rencana</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Rencana Pendakian Anda</h1>
+    </header>
+
+    <div class="container-rencana">
+      <div id="mountainList"></div>
+
+      <div class="empty-message" id="emptyMessage"></div>
+    </div>
+
+    <script>
+      // NAVBAR , GUASAH DIUTAK ATIK
+      const navbarItems = document.querySelectorAll(".navbar li");
+
+      navbarItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          // nge adain blur buat item yang lagi ngga dihover
+          navbarItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.add("blur");
+            }
+          });
+        });
+
+        // buat ngilangin blur pas ngga dihover
+        item.addEventListener("mouseleave", () => {
+          navbarItems.forEach((otherItem) => {
+            otherItem.classList.remove("blur");
+          });
+        });
+      });
+
+      
+      window.onload = function () {
+        let savedMountains =
+          JSON.parse(localStorage.getItem("rencanaPendakian")) || [];
+        let listContainer = document.getElementById("mountainList");
+        let emptyMessage = document.getElementById("emptyMessage");
+        if (savedMountains.length > 0) {
+          listContainer.innerHTML = "";
+          savedMountains.forEach(function (mountain, index) {
+            let listItem = document.createElement("div");
+            listItem.classList.add("mountain-item");
+
+            // Gambar gunung
+            let image = document.createElement("img");
+            image.src = "../gambar/" + mountain.image;
+            image.alt = mountain.name;
+
+            // Informasi gunung
+            let info = document.createElement("div");
+            info.classList.add("mountain-info");
+            let name = document.createElement("h3");
+            name.textContent = mountain.name;
+
+            // Ketinggian, Deskripsi, Lokasi
+            let elevation = document.createElement("p");
+            elevation.innerHTML =
+              "Elevasi &nbsp;&nbsp;&nbsp;&nbsp; : " + mountain.elevation;
+            let description = document.createElement("p");
+            description.textContent = "Deskripsi : " + mountain.description;
+            let location = document.createElement("p");
+            location.textContent = "" + mountain.location;
+
+            let deleteButton = document.createElement("button");
+            deleteButton.classList.add("delete-button");
+            // INI ICON HAPUS NYA
+            deleteButton.innerHTML =
+              '<i class="fas fa-trash-alt"></i> Selesai Didaki';
+            deleteButton.onclick = function () {
+              deleteMountain(index);
+            };
+
+
+            info.appendChild(name);
+            info.appendChild(elevation);
+            info.appendChild(location);
+            info.appendChild(deleteButton);
+            listItem.appendChild(image);
+            listItem.appendChild(info);
+            listContainer.appendChild(listItem);
+          });
+        } else {
+          emptyMessage.textContent =
+            "Tidak ada gunung yang disimpan. Silakan tambahkan gunung ke rencana pendakian Anda!";
+        }
+      };
+
+      // Fungsi buat ngapus simpanan
+      function deleteMountain(index) {
+        let savedMountains =
+          JSON.parse(localStorage.getItem("rencanaPendakian")) || [];
+        savedMountains.splice(index, 1);
+
+        // DIURUTIN ULANG LAGI
+        localStorage.setItem(
+          "rencanaPendakian",
+          JSON.stringify(savedMountains)
+        );
+        window.location.reload();
+      }
+    </script>
+  </body>
+</html>

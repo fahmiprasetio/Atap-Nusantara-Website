@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atap Nusantara | Jelajahi</title>
+    <link rel="icon" href="../gambar/logo-atap-nusantara-invert.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- LINK BUAT ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- FONT PLAYFAIR DISPLAY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Font Passion One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font Anton -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="overlay-jelajahi">
+        <img src="../gambar/tekstur.jpg">
+        <img src="../gambar/tekstur-flip.jpg">
+        <img src="../gambar/tekstur.jpg">
+        <img src="../gambar/tekstur-flip.jpg">
+        <img src="../gambar/tekstur.jpg">
+        <img src="../gambar/tekstur-flip.jpg">
+        <img src="../gambar/tekstur.jpg">
+        <img src="../gambar/tekstur-flip.jpg">
+        <img src="../gambar/tekstur.jpg">
+        <img src="../gambar/tekstur-last.jpg">
+
+
+        
+    </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../Atap_Nusantara.html">Beranda</a></li>
+                <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                <li><a href="jelajahi.html">Jelajahi</a></li>
+                <li><a href="rencana.html">Rencana</a></li>
+                
+            </ul>
+        </nav>
+
+        
+<header>
+    <h1>Mari Jelajahi Atap-Atap Nusantara!</h1>
+    <p>Jelajahi keindahan alam Indonesia melalui jejak-jejak pendakian yang menantang. Temukan berbagai gunung yang siap Anda daki. Siap untuk memulai petualangan? Ayo, mulai jelajahi sekarang!</p>
+</header>
+
+<div class="garis-horizontal"></div>
+
+
+<div class="container-jelajahi">
+    <div class="sorting-container-jelajahi">
+        <label for="sorting-dropdown">Urutkan Berdasarkan:</label>
+        <select id="sorting-dropdown" class="dropdown" onchange="sortMountains()">
+            <option value="height">Tinggi Gunung</option>
+            <option value="activity">Status Keaktifan</option>
+            <option value="difficulty">Tingkat Kesulitan</option>
+        </select>
+    </div>
+
+
+    <!-- MULAI DARI SINI DATA GUNUNG NYA APA AJA -->
+    <div class="mountain-list" id="mountain-list">
+
+        <div class="mountain-item" data-name="Gunung Merapi" data-height="2911" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-merapi.jpg" alt="Gunung Merapi">
+            <div class="mountain-info">
+                <h3>Gunung Merapi</h3>
+                <p class="tinggi">2,911 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Salah satu gunung berapi paling aktif di Indonesia. Pendakian ke puncaknya menawarkan pemandangan yang spektakuler namun juga sangat menantang dan berbahaya.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Sleman, Yogyakarta</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/merapi.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Merapi')">Simpan ke Rencana</button>
+
+                
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Merbabu" data-height="3142" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-merbabu.jpg" alt="Gunung Merbabu">
+            <div class="mountain-info">
+                <h3>Gunung Merbabu</h3>
+                <p class="tinggi">3,142 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung yang terkenal dengan pemandangan alam yang memukau dan jalur pendakian yang cukup menantang namun bisa dilakukan oleh pendaki pemula dengan pengalaman.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Magelang, Jawa Tengah</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/merbabu.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Merbabu')"><i class="fas fa-save"></i> Simpan<i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Prau" data-height="2565" data-activity="Aktif" data-difficulty="Mudah">
+            <img src="../gambar/gunung-prau.jpg" alt="Gunung Prau">
+            <div class="mountain-info">
+                <h3>Gunung Prau</h3>
+                <p class="tinggi">2,565 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung yang cocok bagi pendaki pemula. Menawarkan panorama indah dari puncaknya dan terkenal dengan keindahan sunrise yang menakjubkan.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Wonosobo, Jawa Tengah</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp; : Aktif</p>
+                <p class="kesulitan">Kesulitan : Mudah</p>
+                <a href="html-gunung/prau.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Prau')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Rinjani" data-height="3726" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/Gunung-Rinjani.jpg" alt="Gunung Rinjani">
+            <div class="mountain-info">
+                <h3>Gunung Rinjani</h3>
+                <p class="tinggi">3,726 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung terbesar di Lombok dengan pemandangan alam yang sangat memukau, terutama Danau Segara Anak. Pendakian ke puncak Rinjani sangat menantang dan memerlukan persiapan yang matang.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Lombok Timur, NTB</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/rinjani.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Rinjani')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Sindoro" data-height="3150" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-sindoro.jpeg" alt="Gunung Sindoro">
+            <div class="mountain-info">
+                <h3>Gunung Sindoro</h3>
+                <p class="tinggi">3,150 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung yang menawarkan pemandangan yang indah dan jalur pendakian yang cukup menantang. Pendakian Sindoro sering dianggap lebih ringan dibandingkan dengan gunung-gunung lain di sekitarnya.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Temanggung, Jawa Tengah</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/sindoro.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Sindoro')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Sumbing" data-height="3371" data-activity="Tidak Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-sumbing.png" alt="Gunung Sumbing">
+            <div class="mountain-info">
+                <h3>Gunung Sumbing</h3>
+                <p class="tinggi">3,371 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung yang sudah tidak aktif ini dikenal dengan medan pendakian yang berat dan tantangan alam yang sangat menarik, menawarkan pemandangan luas dari puncaknya.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Magelang, Jawa Tengah</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Tidak Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/sumbing.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Sumbing')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Gede Pangrango" data-height="2958" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-gede.jpg" alt="Gunung Gede Pangrango">
+            <div class="mountain-info">
+                <h3>Gunung Gede Pangrango</h3>
+                <p class="tinggi">2,958 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Terkenal dengan keindahan alamnya yang asri, Gede Pangrango adalah tempat yang populer untuk pendakian di Jawa Barat. Jalur pendakiannya cukup menantang namun menawarkan pemandangan hutan tropis yang sangat indah.
+                </p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Cianjur, Jawa Barat</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/gede.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Gede Pangrango')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Semeru" data-height="3676" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-semeru.jpg" alt="Gunung Semeru">
+            <div class="mountain-info">
+                <h3>Gunung Semeru</h3>
+                <p class="tinggi">3,676 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung tertinggi di Jawa, yang memiliki pemandangan yang luar biasa dan jalur pendakian yang ekstrem. Puncaknya yang dikenal sebagai "Mahameru" adalah tujuan impian bagi para pendaki.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Lumajang, Jawa Timur</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/semeru.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Semeru')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Tambora" data-height="2850" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-tambora.jpg" alt="Gunung Tambora">
+            <div class="mountain-info">
+                <h3>Gunung Tambora</h3>
+                <p class="tinggi">2,850 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Dikenal dengan letusan besar yang terjadi pada tahun 1815, yang menyebabkan fenomena global "tahun tanpa musim panas". Gunung ini memiliki medan yang sulit dan menantang, namun menawarkan pemandangan yang sangat epik.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Bima, NTB</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/tambora.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Tambora')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Kerinci" data-height="3805" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-kerinci.jpg" alt="Gunung Kerinci">
+            <div class="mountain-info">
+                <h3>Gunung Kerinci</h3>
+                <p class="tinggi">3,805 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung tertinggi di Sumatera dengan jalur pendakian yang cukup menantang. Pendakian menuju puncaknya menawarkan pemandangan yang sangat indah dan udara segar.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Kerinci, Jambi</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/kerinci.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Kerinci')"><i class="fas fa-save"></i> Simpan</button>
+
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Raung" data-height="3344" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-raung.jpg" alt="Gunung Raung">
+            <div class="mountain-info">
+                <h3>Gunung Raung</h3>
+                <p class="tinggi">3,344 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Raung adalah gunung berapi yang sangat aktif dan memiliki kaldera besar. Pendakian ke puncaknya cukup menantang dan membutuhkan persiapan yang matang karena medan yang ekstrem dan terkadang aktifnya letusan.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Bondowoso, Jawa Timur</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/raung.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Raung')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+
+        <div class="mountain-item" data-name="Gunung Lawu" data-height="3265" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-lawu.jpg" alt="Gunung Lawu">
+            <div class="mountain-info">
+                <h3>Gunung Lawu</h3>
+                <p class="tinggi">3,265 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Lawu terkenal dengan jalur pendakian yang tidak terlalu ekstrem namun tetap menantang. Gunung ini menawarkan pemandangan indah dan aura mistis yang kuat di sepanjang perjalanan.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Karanganyar, Jawa Tengah</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/kerinci.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Lawu')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Ciremai" data-height="3078" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-ciremai.jpg" alt="Gunung Ciremai">
+            <div class="mountain-info">
+                <h3>Gunung Ciremai</h3>
+                <p class="tinggi">3,078 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Ciremai adalah gunung tertinggi di Jawa Barat. Pendakian menuju puncaknya cukup menantang, namun sangat memuaskan dengan pemandangan yang luar biasa.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Kuningan, Jawa Barat</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/ciremai.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Ciremai')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Tangkuban Perahu" data-height="2084" data-activity="Aktif" data-difficulty="Mudah">
+            <img src="../gambar/gunung-tangkuban-perahu.png" alt="Gunung Tangkuban Perahu">
+            <div class="mountain-info">
+                <h3>Gunung Tangkuban Perahu</h3>
+                <p class="tinggi">2,084 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Tangkuban Perahu memiliki kawah yang terkenal dan merupakan tempat wisata populer. Pendakian relatif mudah dan sangat cocok untuk wisatawan yang ingin menikmati pemandangan kawah vulkanik.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Bandung, Jawa Barat</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Mudah</p>
+                <a href="html-gunung/tangkuban-perahu.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Tangkuban Perahu')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Arjuno" data-height="3339" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-arjuno.jpeg" alt="Gunung Arjuno">
+            <div class="mountain-info">
+                <h3>Gunung Arjuno</h3>
+                <p class="tinggi">3,339 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Arjuno adalah salah satu gunung yang populer di Jawa Timur, dengan pemandangan alam yang indah dan jalur pendakian yang cukup menantang. Cocok untuk pendaki yang sudah berpengalaman.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Malang, Jawa Timur</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/arjuno.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Arjuno')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Slamet" data-height="3428" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-slamet.jpeg" alt="Gunung Slamet">
+            <div class="mountain-info">
+                <h3>Gunung Slamet</h3>
+                <p class="tinggi">3,428 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Slamet adalah salah satu gunung tertinggi di Jawa Tengah, dikenal dengan jalur pendakian yang sangat menantang. Pemandangannya luar biasa, tetapi hanya cocok untuk pendaki berpengalaman.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Pemalang, Jawa Tengah</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/slamet.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Slamet')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Bromo" data-height="2329" data-activity="Aktif" data-difficulty="Mudah">
+            <img src="../gambar/gunung-bromo.png" alt="Gunung Bromo">
+            <div class="mountain-info">
+                <h3>Gunung Bromo</h3>
+                <p class="tinggi">2,329 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Bromo terkenal dengan pemandangan matahari terbitnya yang luar biasa. Meskipun aktif, pendakian ke kawahnya relatif mudah, dengan banyak pengunjung yang menikmati perjalanan menggunakan jeep.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Semeru, Jawa Timur, Indonesia</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Mudah</p>
+                <a href="html-gunung/bromo.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Bromo')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Gamkonora" data-height="1560" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-gamkonora.png" alt="Gunung Gamkonora">
+            <div class="mountain-info">
+                <h3>Gunung Gamkonora</h3>
+                <p class="tinggi">1,560 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Gamkonora adalah gunung berapi yang terletak di Halmahera, Maluku Utara. Menawarkan tantangan pendakian yang cukup berat dengan pemandangan yang memukau.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Halmahera, Maluku Utara, Indonesia</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/gamkonora.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Gamkonora')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Bukit Anak Dara" data-height="1680" data-activity="Tidak Aktif" data-difficulty="Mudah">
+            <img src="../gambar/bukit-anak dara.jpeg" alt="Bukit Anak Dara">
+            <div class="mountain-info">
+                <h3>Bukit Anak Dara</h3>
+                <p class="tinggi">1,860 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Legenda di balik nama Anak Dara berhubungan dengan cerita rakyat setempat, yang memberi kesan bahwa bukit ini memiliki cerita romantis atau mistis, tergantung pada versi ceritanya.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Lombok, Bali </p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Tidak Aktif</p>
+                <p class="kesulitan">Kesulitan : Mudah</p>
+                <a href="html-gunung/bukit-anak-dara.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Bukit Anak Dara')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Ijen" data-height="2799" data-activity="Aktif" data-difficulty="Sulit">
+            <img src="../gambar/gunung-ijen.png" alt="Gunung Ijen">
+            <div class="mountain-info">
+                <h3>Gunung Ijen</h3>
+                <p class="tinggi">2799 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Ijen terkenal dengan kawah belerangnya yang memiliki danau asam terbesar di dunia. Pendakian menuju puncak menawarkan pemandangan spektakuler, terutama saat melihat api biru yang hanya ada di beberapa tempat di dunia.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Banyuwangi, Jawa Timur</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Sulit</p>
+                <a href="html-gunung/ijen.html"><button class="btn-2" >Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Ijen')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="mountain-item" data-name="Gunung Egon" data-height="1703" data-activity="Aktif" data-difficulty="Menengah">
+            <img src="../gambar/gunung-egon.jpg" alt="Gunung Egon">
+            <div class="mountain-info">
+                <h3>Gunung Egon</h3>
+                <p class="tinggi">1,703 MDPL</p>
+                <p class="deskripsi-singkat-gunung">Gunung Egon terletak di Pulau Flores, Nusa Tenggara Timur. Gunung ini terkenal dengan kawah aktifnya dan pemandangan yang menakjubkan dari puncaknya.</p>
+                <p class="lokasi">Lokasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Kabupaten Sikka, Nusa Tenggara Timur</p>
+                <p class="status">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aktif</p>
+                <p class="kesulitan">Kesulitan : Menengah</p>
+                <a href="html-gunung/egon.html"><button class="btn-2">Lihat Selengkapnya</button></a>
+                <button class="btn" onclick="saveMountain('Gunung Egon')"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script>
+
+
+// NAVBAR , GUASAH DIUTAK ATIK
+const navbarItems = document.querySelectorAll('.navbar li');
+
+navbarItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        // nge adain blur buat item yang lagi ngga dihover 
+        navbarItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.add('blur');
+            }
+        });
+    });
+
+    // buat ngilangin blur pas ngga dihover
+    item.addEventListener('mouseleave', () => {
+        navbarItems.forEach(otherItem => {
+            otherItem.classList.remove('blur');
+        });
+    });
+});
+
+
+
+//NERAPIN TINGGI GUNUNG PASA HALAAMN PERTAMA DIBUKA
+document.addEventListener('DOMContentLoaded', () => {
+    sortMountains();
+});
+
+
+
+// BUAT NGURUTIN GUNUNG
+function sortMountains() {
+    const criteria = document.getElementById('sorting-dropdown').value;
+    const mountains = document.querySelectorAll('.mountain-item');
+    const mountainsArray = Array.from(mountains);
+
+    let sortedMountains;
+
+    if (criteria === 'height') {
+        sortedMountains = mountainsArray.sort((a, b) => {
+            const heightA = parseInt(a.getAttribute('data-height'));
+            const heightB = parseInt(b.getAttribute('data-height'));
+            return heightB - heightA;
+        });
+
+    } else if (criteria === 'activity') {
+        sortedMountains = mountainsArray.sort((b, a) => {
+            return a.getAttribute('data-activity').localeCompare(b.getAttribute('data-activity'));
+        });
+
+    } else if (criteria === 'difficulty') {
+        const difficultyLevels = {
+            'Mudah': 1,
+            'Menengah': 2,
+            'Sulit': 3
+        };
+
+        sortedMountains = mountainsArray.sort((a, b) => {
+            const difficultyA = a.getAttribute('data-difficulty').trim();
+            const difficultyB = b.getAttribute('data-difficulty').trim();
+            return difficultyLevels[difficultyA] - difficultyLevels[difficultyB];
+        });
+    }
+
+    // PAS BAGIAN SINI DIKOSONGIN LAGI
+    const mountainList = document.getElementById('mountain-list');
+    mountainList.innerHTML = '';
+
+    // TERUS DIISI ULANG LAGI PAKE DATA YANG UDAH DIURUTIN 
+    sortedMountains.forEach(mountain => {
+        mountainList.appendChild(mountain);
+    });
+}
+
+
+
+
+// GA KEPAKE TAPI JGN DIAPUS, TAKUTNYA KODINGANNYA EROR, MALES KERJA DUA KALI
+function saveMountain(mountainName) {
+
+    // Format gambar yang tersedia
+    let imageFormats = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+
+    // Cek file gambar yang tersedia
+    let imagePath = '../gambar/' + mountainName.toLowerCase().replace(' ', '-') + '.';
+
+    // Cari gambar yang ada dari beberapa format
+    let foundImage = null;
+    for (let format of imageFormats) {
+        let imageUrl = imagePath + format;
+        if (imageExists(imageUrl)) {
+            foundImage = imageUrl;
+            break;
+        }
+    }
+
+    // Ambil data dari halaman jelajahi
+    const mountainElement = document.querySelector(`.mountain-item[data-name="${mountainName}"]`);
+
+    // Mengambil data dari halaman jelajahi
+    let mountainData = {
+        name: mountainName,
+        image: foundImage || '../gambar/default.jpg', // Gambar default jika tidak ditemukan
+        elevation: mountainElement ? mountainElement.querySelector('.tinggi').textContent.trim() : 'Ketinggian tidak tersedia',
+        description: mountainElement ? mountainElement.querySelector('.deskripsi-singkat-gunung').textContent.trim() : 'Deskripsi tidak tersedia',
+        location: mountainElement ? mountainElement.querySelector('.lokasi').textContent.trim() : 'Lokasi tidak tersedia'
+    };
+
+    // Mendapatkan data rencana yang sudah ada di localStorage
+    let savedMountains = JSON.parse(localStorage.getItem('rencanaPendakian')) || [];
+
+    // Cek jika gunung belum ada
+    if (!savedMountains.some(m => m.name === mountainData.name)) {
+        savedMountains.push(mountainData);
+        localStorage.setItem('rencanaPendakian', JSON.stringify(savedMountains));
+
+        // Ganti warna tombol jika berhasil disimpan
+        const saveButton = mountainElement.querySelector('.btn');
+        saveButton.style.backgroundColor = "#4CAF50"; // BERUBAH JADI IJO
+        saveButton.innerHTML = `<i class="fas fa-check-circle"></i> Tersimpan`; // Ganti teks tombol menjadi "Tersimpan"
+    } else {
+        // Jika sudah ada dalam rencana, beri warna merah
+        const saveButton = mountainElement.querySelector('.btn');
+        saveButton.style.backgroundColor = "#FF5733"; // Merah untuk sudah ada
+        saveButton.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Sudah Ada`; // Ganti teks tombol menjadi "Sudah Ada"
+    }
+}
+
+// FUNGSI BUAT NYARI GAMBARNYA
+function imageExists(url) {
+    let img = new Image();
+    img.src = url;
+    return img.complete && img.naturalHeight !== 0;
+}
+
+
+//     alert(mountainData.name + ' disimpan ke rencana!');
+
+//     let savedMountains = JSON.parse(localStorage.getItem('rencanaPendakian')) || [];
+
+//     // Cek jika gunung belum ada
+//     if (!savedMountains.some(m => m.name === mountainData.name)) {
+//         savedMountains.push(mountainData);
+//         localStorage.setItem('rencanaPendakian', JSON.stringify(savedMountains));
+//     } else {
+//         alert(mountainData.name + ' sudah ada dalam rencana pendakian!');
+    
+// }
+
+
+
+
+function getElevation(mountainName) {
+    const elevations = {
+        'Semeru': 3676,
+        'Rinjani': 3726,
+        'Merapi': 2968,
+        'Bromo': 2392
+    };
+    return elevations[mountainName] || 0;
+}
+
+function getDescription(mountainName) {
+    const descriptions = {
+        'Semeru': 'Gunung Semeru adalah gunung tertinggi di Pulau Jawa.',
+        'Rinjani': 'Gunung Rinjani adalah gunung berapi aktif di Pulau Lombok.',
+        'Merapi': 'Gunung Merapi adalah salah satu gunung berapi paling aktif di Indonesia.',
+        'Bromo': 'Gunung Bromo terkenal dengan pemandangan matahari terbitnya yang indah.'
+    };
+    return descriptions[mountainName] || 'Deskripsi belum tersedia';
+}
+
+function getLocation(mountainName) {
+    const locations = {
+        'Semeru': 'Jawa Timur, Indonesia',
+        'Rinjani': 'Lombok, Indonesia',
+        'Merapi': 'Jawa Tengah, Indonesia',
+        'Bromo': 'Jawa Timur, Indonesia'
+    };
+    return locations[mountainName] || 'Lokasi belum diketahui';
+}
+
+
+
+
+// ga KEPAKE, TOMBOL SIMPAN PAKE YANG BAWAH
+document.querySelectorAll('.mountain-item .btn').forEach(button => {
+    button.addEventListener('click', function() {
+        let mountainElement = this.closest('.mountain-item');
+        let mountainName = mountainElement.getAttribute('data-name');
+        saveMountain(mountainName, mountainElement);
+    });
+});
+
+// GA KE PAKE TAPI GAUSAH DIAPUS LAH, KODINGANNYA UDAH JALAN INI. TAKUTNYA ANCUR LAGI
+function saveMountain(mountainName, mountainElement) {
+    console.log('Menyimpan gunung:', mountainName);
+
+    let imageFormats = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    let imagePath = '../gambar/' + mountainName.toLowerCase().replace(' ', '-') + '.';
+    let foundImage = null;
+
+    for (let format of imageFormats) {
+        let imageUrl = imagePath + format;
+        if (imageExists(imageUrl)) {
+            foundImage = imageUrl;
+            break;
+        }
+    }
+
+    let mountainData = {
+        name: mountainName,
+        image: foundImage || '../gambar/default.jpg',
+        elevation: mountainElement.querySelector('.tinggi').textContent.trim(),
+        description: mountainElement.querySelector('.deskripsi-singkat-gunung').textContent.trim(),
+        location: mountainElement.querySelector('.lokasi').textContent.trim()
+    };
+
+    let savedMountains = JSON.parse(localStorage.getItem('rencanaPendakian')) || [];
+
+    if (!savedMountains.some(m => m.name === mountainData.name)) {
+        savedMountains.push(mountainData);
+        localStorage.setItem('rencanaPendakian', JSON.stringify(savedMountains));
+        const saveButton = mountainElement.querySelector('.btn');
+        saveButton.style.backgroundColor = "#4CAF50"; 
+        saveButton.innerHTML = `<i class="fas fa-check-circle"></i> Tersimpan`;
+    } else {
+        const saveButton = mountainElement.querySelector('.btn');
+        saveButton.style.backgroundColor = "#FF5733"; 
+        saveButton.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Sudah Ada`;
+    }
+}
+function imageExists(url) {
+    let img = new Image();
+    img.src = url;
+    return img.complete && img.naturalHeight !== 0;
+}
+
+
+
+
+// punya tombol, simpan jangan disentuh
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.mountain-item').forEach(mountainElement => {
+        let mountainName = mountainElement.getAttribute('data-name');
+        let savedMountains = JSON.parse(localStorage.getItem('rencanaPendakian')) || [];
+
+        // Cek jika gunung sudah ada di localStorage
+        if (savedMountains.some(m => m.name === mountainName)) {
+            let saveButton = mountainElement.querySelector('.btn');
+            saveButton.style.backgroundColor = "#4CAF50"; // Hijau
+            saveButton.innerHTML = `<i class="fas fa-check-circle"></i> Sudah Tersimpan`;
+        }
+    });
+});
+
+document.querySelectorAll('.mountain-item .btn').forEach(button => {
+    button.addEventListener('click', function() {
+        let mountainElement = this.closest('.mountain-item');
+        let mountainName = mountainElement.getAttribute('data-name');
+        handleSaveRemoveMountain(mountainName, mountainElement);
+    });
+});
+
+function handleSaveRemoveMountain(mountainName, mountainElement) {
+    let savedMountains = JSON.parse(localStorage.getItem('rencanaPendakian')) || [];
+    let mountainIndex = savedMountains.findIndex(m => m.name === mountainName);
+    if (mountainIndex === -1) {
+        saveMountain(mountainName, mountainElement, savedMountains);
+    } else {
+        removeMountain(mountainName, mountainElement, savedMountains, mountainIndex);
+    }
+}
+
+
+// buat nyimpen gunung ke halaman rencana
+function saveMountain(mountainName, mountainElement, savedMountains) {
+    let imageFormats = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    let imagePath = '../gambar/' + mountainName.toLowerCase().replace(' ', '-') + '.';
+    let foundImage = null;
+
+    for (let format of imageFormats) {
+        let imageUrl = imagePath + format;
+        if (imageExists(imageUrl)) {
+            foundImage = imageUrl;
+            break;
+        }
+    }
+
+    let mountainData = {
+        name: mountainName,
+        image: foundImage || '../gambar/default.jpg',
+        elevation: mountainElement.querySelector('.tinggi').textContent.trim(),
+        description: mountainElement.querySelector('.deskripsi-singkat-gunung').textContent.trim(),
+        location: mountainElement.querySelector('.lokasi').textContent.trim()
+    };
+
+    savedMountains.push(mountainData);
+    localStorage.setItem('rencanaPendakian', JSON.stringify(savedMountains));
+
+
+    const saveButton = mountainElement.querySelector('.btn');
+    saveButton.style.backgroundColor = "#4CAF50";
+    saveButton.innerHTML = `<i class="fas fa-check-circle"></i> Sudah Tersimpan`;
+}
+
+
+// BUAT NGEMABLIIN BENTUK TOMBOL SIMPAN PAS DITEKAN DUA KALI
+function removeMountain(mountainName, mountainElement, savedMountains, mountainIndex) {
+    savedMountains.splice(mountainIndex, 1);
+    localStorage.setItem('rencanaPendakian', JSON.stringify(savedMountains));
+
+    const saveButton = mountainElement.querySelector('.btn');
+    saveButton.style.backgroundColor = "#e9e7e0"; 
+    saveButton.innerHTML = `<i class="fas fa-save"></i> Simpan`;
+}
+
+function imageExists(url) {
+    let img = new Image();
+    img.src = url;
+    return img.complete && img.naturalHeight !== 0;
+}
+
+
+
+
+</script>
+
+</body>
+</html>
